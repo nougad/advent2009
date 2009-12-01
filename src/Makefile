@@ -3,9 +3,9 @@ CC=gcc
 CFLAGS=-Wall -Os -std=c99
 
 all: main.c
-	$(CC) $(CFLAGS) -o game src/main.c
+	$(CC) $(CFLAGS) -o game main.c
 
-run
+run:
 	./game
 
 clean: game.o
