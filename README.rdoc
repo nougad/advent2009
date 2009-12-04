@@ -7,4 +7,4 @@ In diesem Projekt soll (der Anfang) eines kleinen 2D-Spiels erstellt werden. Die
 
 == Teilnehmer
 * Aaron Mueller <mail@aaron-mueller.de>
-
+* Ruben Mueller <r.mueller@purzwei.de>
