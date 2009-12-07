@@ -1,10 +1,20 @@
+
 == Adventskalender 2009
 Viele reden von Open Source, doch die wenigsten beteiligen sich aktiv. Mit dieser Serie von Artikeln will ich den Open Source Gedanken etwas näher bringen und ein interaktives Projekt zum mitmachen schaffen. Verpackt als Adventskalender (in kooperation mit Florian) gibt es jeden zweiten Tag im Advent ein Teil dieser Serie. Florian stellt wiederum jeden zweiten Tag ein CLI-Tool vor. Der Adventskalender ist unter {Florians Blog}[http://feitel.indeedgeek.de/2009/adventskalender/] zu finden.
 
 == Über dieses Projekt
 In diesem Projekt soll (der Anfang) eines kleinen 2D-Spiels erstellt werden. Dieses soll dazu dienen Open Source Entwicklungstools und den Prozess im allgemeinen kennenzulernen. Das Projekt lebt vom Mitmachen, jeder ist herzlich eingeladen sich daran zu beteiligen.
 
+== Vorbedingungen
+Folgende Pakete/Programme/Libs sollten im System installiert sein:
+* libSDL
+* gcc, make
+
+== Installation
+Um das Projekt zu starten, wird das Makefile verwendet. "make" baut das Projekt.
+
 == Teilnehmer
 * Aaron Mueller <mail@aaron-mueller.de>
 * Ruben Mueller <r.mueller@purzwei.de>
 * Florian Eitel <feitel indeedgeek de>
+

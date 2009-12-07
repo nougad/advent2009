@@ -4,9 +4,7 @@ CC=       gcc
 # Compiler flags
 CFLAGS=   -Wall -Os -std=c99
 # Libraries
-CLIBS=
-# Includes
-CINCL=
+CLIBS=    `sdl-config --cflags` -lSDL -lGL
 ####### Commands
 RM=       rm -r
 MKDIR=    mkdir -p
@@ -29,25 +27,28 @@ SRCS = $(shell ls -1 $(SRCDIR)/*.$(SRCEND))
 BINS = $(SRCS:$(SRCDIR)%.$(SRCEND)=$(OBJDIR)%.$(OBJEND))
 
 # default task depends on compile
-all: compile
+all: init compile
+
+# create object-folder
+init:
+	$(MKDIR) $(OBJDIR)
 
 # compile depends on object files and executable
 compile: $(BINS) $(EXE)
 
 # executable depends  on all object files
 $(EXE): $(BINS)
-	$(CC) $(CINCL) -o $(OUTDIR)/$(NAME) -export-dynamic $(BINS) $(CLIBS) $(CFLAGS)
+	$(CC) -o $(OUTDIR)/$(NAME) -export-dynamic $(BINS) $(CLIBS) $(CFLAGS)
 
 # each file in OBJDIR/*.o depends on corresponding source file in SRCDIR
+# $@ = name of target (*.o)
+# $< = first dependency (*.c)
 $(OBJDIR)/%.o: $(SRCDIR)/%.$(SRCEND)
-	$(MKDIR) $(OBJDIR) # create object-folder
-	# $@ = name of target (*.o)
-	# $< = first dependency (*.c)
-	$(CC) $(CINCL) -c $< -o $@ $(CFLAGS)
+	$(CC) -c $< -o $@ $(CLIBS) $(CFLAGS)
 
 # delete OUTDIR
+# don't raise an error if directory not exists
 clean:
-	# don't raise an error if directory not exists
 	$(RM) $(OUTDIR) || true
 
 # start programm
