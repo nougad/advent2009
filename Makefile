@@ -2,7 +2,7 @@
 # Compiler
 CC=       gcc
 # Compiler flags
-CFLAGS=   -Wall -Os -std=c99
+CFLAGS=   -Wall -std=c99 -ggdb
 # Libraries
 CLIBS=    `sdl-config --cflags` -lSDL -lGL
 ####### Commands

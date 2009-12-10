@@ -19,6 +19,7 @@ int main(int argc, char **argv) {
     }
 
     // Draw the stuff on the screen and "flip" th the next frame
+    SDL_FillRect(screen, NULL, 0x000000);
     drawScreen();
     SDL_Flip(screen);
   }
