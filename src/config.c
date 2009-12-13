@@ -7,4 +7,5 @@
 SDL_Surface *screen = NULL;
 SDL_Event event;
 bool gameRunning = true;
+int *terrain = NULL;
 

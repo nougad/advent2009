@@ -9,7 +9,7 @@
 extern SDL_Surface *screen; // Screen to paint on
 extern SDL_Event event; // Event storage
 extern bool gameRunning; // Set this variable to false to shutdown the game
-
+extern int *terrain; // Game terrain
 
 // Constants
 

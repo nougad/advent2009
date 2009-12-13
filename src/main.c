@@ -10,6 +10,9 @@ int main(int argc, char **argv) {
   SDL_Init(SDL_INIT_VIDEO);
   screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
 
+  // Initialize internal game state
+  terrain = generateTerrain(150.0, 180.0);
+  
   // the main game loop
   while (gameRunning == true) {
     // Check for events
@@ -23,6 +26,9 @@ int main(int argc, char **argv) {
     drawScreen();
     SDL_Flip(screen);
   }
+
+  // Cleanup and quit
+  free(terrain);
 
   SDL_Quit();
   return 0;
